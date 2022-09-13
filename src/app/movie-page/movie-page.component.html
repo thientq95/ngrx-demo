@@ -1,0 +1,8 @@
+<ng-container class="movie-list" *ngIf="loading$ | async; else complete">
+  Loading ...
+</ng-container>
+<ng-template #complete>
+  <ul class="movie-list">
+    <li *ngFor="let item of movies$ | async; let i = index">{{ i + 1 }}. {{ item.name }} </li>
+  </ul>
+</ng-template>
